@@ -33,11 +33,7 @@ namespace UTO.ViewModels
 
         private void DeleteCommandExecute(object obj)
         {
-            /*Artist a = Session.GetData.GetArtistByName(CurArtist.Name);
-            Session.ModifyData.DeleteArtist(a);
-            Console.WriteLine(a.Name + " deleted");
-            DataContainer.InitArtistObservList();
-            */
+            Urls.Remove(CurUrl);
         }
 
 

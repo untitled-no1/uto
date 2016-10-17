@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,24 +13,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UTO.Views;
 
-namespace UTO
+namespace UTO.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for infoWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class infoWindow : Window
     {
-        public MainWindow()
+        public infoWindow()
         {
             InitializeComponent();
         }
 
-        private void Info_Click(object sender, RoutedEventArgs e)
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            var dialog = new infoWindow();
-            dialog.Show();
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
     }
 }

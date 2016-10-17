@@ -1,0 +1,26 @@
+﻿<Window x:Class="UTO.Views.infoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UTO.Views"
+        mc:Ignorable="d"
+        Title="infoWindow" Height="300" Width="300"
+        ResizeMode="NoResize">
+    <Grid>
+        <StackPanel Margin="15">
+            <Image Source="../Resource/logo.png"/>
+            <TextBlock Text="v1.0 (17.10.2016)" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,0,0,15"/>
+
+            <TextBlock Text="Supported Browsers:" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,0,0,15"/>
+            <TextBlock Text="Internet Explorer, Microsoft Edge" HorizontalAlignment="Center"/>
+            <TextBlock Text="Google Chrome, Mozilla FireFox, Opera" HorizontalAlignment="Center"/>
+
+            <TextBlock HorizontalAlignment="Center" Margin="0,15,0,0">
+                <Hyperlink NavigateUri="http://www.untitled-no1.at" RequestNavigate="Hyperlink_RequestNavigate">
+                    untitled-no1.at
+                </Hyperlink>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

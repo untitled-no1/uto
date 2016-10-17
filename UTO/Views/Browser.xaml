@@ -5,11 +5,26 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UTO.Views"
              mc:Ignorable="d" 
-             DataContext="{Binding Path=BrowserVM, Source={StaticResource ViewModelLocator}}">
-    <Grid>
+             DataContext="{Binding Path=BrowserVM, Source={StaticResource ViewModelLocator}}" Padding="0,0,0,0">
+    <UserControl.Resources>
+            <Style TargetType="Button">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#4183D7" />
+            <Setter Property="Foreground" Value="AliceBlue"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="15" />
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#FFC7E0FF"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="-5">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -26,17 +41,19 @@
         <Button Grid.Row="0" Grid.Column="2" Name="IE" IsEnabled="{Binding IEEnabled}"
                 Content="IE" Command="{Binding SelectIE}" />
         <Button Grid.Row="0" Grid.Column="3" Name="Edge" IsEnabled="{Binding EdgeEnabled}"
-                Content="Edge" Command="{Binding SelectEdge}" />
+                Content="Edge" Command="{Binding SelectEdge}"  />
         <Button Grid.Row="0" Grid.Column="4" Name="Opera" IsEnabled="{Binding OperaEnabled}"
                 Content="Opera" Command="{Binding SelectOpera}" />
 
 
-        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" ItemsSource="{Binding UrlListVM.Urls, Source={StaticResource ViewModelLocator}}"
+        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" ColumnWidth="*" CanUserResizeColumns="False" ItemsSource="{Binding UrlListVM.Urls, Source={StaticResource ViewModelLocator}}"
                   SelectedItem="{Binding UrlListVM.CurUrl, Mode=TwoWay, Source={StaticResource ViewModelLocator}}"
-                  AutoGenerateColumns="False">
+                  AutoGenerateColumns="False" BorderBrush="{x:Null}" Background="{x:Null}" BorderThickness="0" GridLinesVisibility="None" HeadersVisibility="None" FontSize="14" Padding="5,0">
+
+            
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Url"/>
-                
+
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
