@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="UTO.Views.Browser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UTO.Views"
+             mc:Ignorable="d" 
+             DataContext="{Binding Path=BrowserVM, Source={StaticResource ViewModelLocator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Name="Chrome" IsEnabled="{Binding ChromeEnabled}"
+                Content="Chrome" Command="{Binding SelectChrome}" />
+        <Button Grid.Row="0" Grid.Column="1" Name="Firefox" IsEnabled="{Binding FireFoxEnabled}"
+                Content="Firefox" Command="{Binding SelectFireFox}" />
+        <Button Grid.Row="0" Grid.Column="2" Name="IE" IsEnabled="{Binding IEEnabled}"
+                Content="IE" Command="{Binding SelectIE}" />
+        <Button Grid.Row="0" Grid.Column="3" Name="Edge" IsEnabled="{Binding EdgeEnabled}"
+                Content="Edge" Command="{Binding SelectEdge}" />
+        <Button Grid.Row="0" Grid.Column="4" Name="Opera" IsEnabled="{Binding OperaEnabled}"
+                Content="Opera" Command="{Binding SelectOpera}" />
+
+
+        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" ItemsSource="{Binding UrlListVM.Urls, Source={StaticResource ViewModelLocator}}"
+                  SelectedItem="{Binding UrlListVM.CurUrl, Mode=TwoWay, Source={StaticResource ViewModelLocator}}"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Url"/>
+                
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="DeleteButton" Content="Delete" Command="{Binding UrlListVM.DeleteCommand, Source={StaticResource ViewModelLocator}}"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Name="OpenBtn"
+                Content="Open" Command="{Binding OpenBrowser}" />
+    </Grid>
+</UserControl>

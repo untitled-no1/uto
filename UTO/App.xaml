@@ -1,0 +1,11 @@
+﻿<Application x:Class="UTO.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:UTO"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <util:ViewModelLocator x:Key="ViewModelLocator" xmlns:util="clr-namespace:UTO.Util" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
