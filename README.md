@@ -8,7 +8,7 @@ Compact WPF-Appliction called "UTO - Untitled Tab Opener"
 - Click Open
 
 And guess what.... The application opens the urls in the selected browser.
-The Killer-Feature is that the application reminds your settings!* WHHHHAAAT?
+The Killer-Feature is that the application remembers your settings!* WHHHHAAAT?
 
 *Do not delete "settings.unt"
 
