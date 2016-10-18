@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UTO.Views"
         mc:Ignorable="d"
-        Title="infoWindow" Height="300" Width="300"
+        Title="untitled-no1.at" Height="300" Width="300"
         ResizeMode="NoResize">
     <Grid>
         <StackPanel Margin="15">
             <Image Source="../Resource/logo.png"/>
+            <TextBlock Text="UTO - Untitled Tab Opener" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,0,0,0"/>
             <TextBlock Text="v1.0 (17.10.2016)" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,0,0,15"/>
 
             <TextBlock Text="Supported Browsers:" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,0,0,15"/>
