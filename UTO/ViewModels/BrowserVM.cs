@@ -106,6 +106,7 @@ namespace UTO.ViewModels
             {
                 OperaEnabled = false;
             }
+            SelectedBrowser = item;
 
         }
     
